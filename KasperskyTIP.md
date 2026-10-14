@@ -3,6 +3,11 @@
 Setup: OpenCTI 7.260326.0 on host `plutox` (192.168.101.71:8080), Docker network `xtm_default`.
 Connector: `connectors-7.260326.0/external-import/kaspersky` (login: Kaspersky TIP user + password + certificate).
 
+```bash
+   wget https://github.com/OpenCTI-Platform/connectors/archive/7.260326.0.zip
+   unzip 7.260326.0.zip
+```
+
 ## Prerequisites
 - OpenCTI running and healthy (`docker ps` -> `xtm-opencti-1`, `xtm-rabbitmq-1` Up)
 - Valid OpenCTI API token (verify: `{ me { name } }` GraphQL query returns a name, not AUTH_REQUIRED)
@@ -15,6 +20,7 @@ Connector: `connectors-7.260326.0/external-import/kaspersky` (login: Kaspersky T
    cd ~/opencti/connectors-7.260326.0/external-import/kaspersky
    ```
 2. **Build the image** (the trailing `.` is required)
+   run in the dir where **DockerFile** is present
    ```bash
    docker build -t opencti/connector-kaspersky .
    ```
